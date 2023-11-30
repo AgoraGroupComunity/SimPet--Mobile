@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Produk.detailProduk"
+    >
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="10dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/backbutton"
+                android:layout_gravity="center"
+                android:layout_marginEnd="16dp"
+                android:id="@+id/btn_backFromDetailProduct"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:text="Detail Produk"
+                android:textColor="@color/brownPrimary"/>
+
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/topBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomDetailProduct">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                >
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        >
+
+
+                        <!--            <TextView-->
+                        <!--                android:layout_width="match_parent"-->
+                        <!--                android:layout_height="wrap_content"-->
+                        <!--                android:id="@+id/detail_produk"-->
+                        <!--                android:text="Detail Produk"-->
+                        <!--                android:textAlignment="center"-->
+                        <!--                android:textStyle="bold"-->
+                        <!--                android:textSize="24sp"/>-->
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/greySecondary">
+
+                            <!-- Isi tampilan Anda di sini -->
+
+
+                            <ImageView
+                                android:id="@+id/detailImage"
+                                android:layout_width="200dp"
+                                android:layout_height="200dp"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/produk_bioden_injeksi" />
+
+                        </RelativeLayout>
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textSize="14sp"
+                            android:textColor="@color/greyPrimary"
+                            android:text="Vitamin"
+                            android:visibility="gone"
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textSize="24sp"
+                            android:text="BIODIN Injeksi ATP 100 mL"
+                            android:layout_marginTop="10dp"
+                            android:id="@+id/detailName"
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:textSize="16sp"
+                            android:text="id"
+                            android:layout_marginTop="10dp"
+                            android:id="@+id/detailId"
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textSize="22sp"
+                            android:text="Rp23.000"
+                            android:layout_marginTop="10dp"
+                            android:id="@+id/detailPrice"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/brownPrimary"
+                            />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textSize="21sp"
+                            android:text="Deskripsi Produk"
+                            android:layout_marginBottom="10dp"
+
+
+                            />
+
+                        <TextView
+                            android:id="@+id/detailDescriptions"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="BIODIN - Romindo
+                \n\nMembantu menguatkan otot dan daya tahan tubuh hewan. Terutama ketika dalam keadaan sakit dan keletihan.
+                \n\nINDIKASI
+Berfungsi memperbaiki proses metabolisme tubuh hewan sehingga meningkatkan kerja otot menjadi lebih baik dan daya tahan tubuh hewan lebih prima.
+                \n\nSPESIFIKASI
+                \n- Adenosin Triphosphat, sebagai energi cadangan siap pakai, berperan penting dalam proses metabolisme sel tubuh hewan.
+                \n- Garam Aspartarte, berperan dalam mengatur keseimbangan ion-ion tubuh pada proses metabolisme sel tubuh hewan.
+                \n- Sodium selenite, sangat berperan dalam mengatur reaksi enzimatis pada proses metabolisme sel berfungsi juga sebagai antioksidan.
+                \n- Vitamin B12, berperan pada proses metabolisme tubuh hewan.
+                \n"
+                            android:textColor="@color/greyPrimary"
+                            android:textSize="14sp"
+
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+
+
+            </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical"-->
+<!--        android:paddingHorizontal="20dp"-->
+
+<!--        >-->
+
+<!--    </LinearLayout>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        android:id="@+id/bottomDetailProduct"-->
+<!--        android:orientation="vertical"-->
+
+<!--        >-->
+
+<!--        -->
+
+
+
+<!--    </LinearLayout>-->
+    <LinearLayout
+        android:id="@+id/bottomDetailProduct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingHorizontal="20dp"
+        android:background="@drawable/rounded_slider_up"
+        android:paddingTop="8dp"
+        >
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:gravity="center"-->
+<!--            android:paddingBottom="10dp"-->
+<!--            >-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/btn_kurang"/>-->
+
+<!--            <EditText-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginHorizontal="6dp"-->
+<!--                android:text="1"-->
+<!--                android:textAlignment="center"-->
+
+<!--                />-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/btn_tambah"/>-->
+
+<!--        </LinearLayout>-->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnAddToCart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/brownPrimary"
+            app:cardCornerRadius="15dp"
+
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="10dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/cart_white"
+                    android:layout_marginRight="10dp"
+
+
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Masukan Keranjang"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:layout_gravity="center"
+                    />
+
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

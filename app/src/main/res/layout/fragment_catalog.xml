@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CatalogFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        tools:context=".Katalog">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="20dp">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/cariKatalog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/cari_katalog_bg"
+                app:iconifiedByDefault="false"
+                app:queryHint="Cari Katalog"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Katalog Produk"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textColor="@color/brownPrimary"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"
+                />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="20dp"
+                        app:cardBackgroundColor="@color/greySecondary"
+                        app:cardCornerRadius="10dp"
+                        >
+
+                        <ViewFlipper
+                            android:id="@+id/viewFlipper"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_centerInParent="true"
+                            android:autoStart="true"
+                            android:flipInterval="3000"
+                            android:inAnimation="@anim/anim_slide_in_right"
+                            android:outAnimation="@anim/anim_slide_out_left"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="10dp">
+
+                            <!-- Tampilan gambar pertama -->
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"
+                                android:src="@drawable/produk_terlaris_promo" />
+
+                            <!-- Tampilan gambar kedua -->
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"
+                                android:src="@drawable/cow2" />
+
+                            <!-- Tampilan gambar ketiga -->
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"
+                                android:src="@drawable/sheep1" />
+                        </ViewFlipper>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20dp"
+                            android:textStyle="bold"
+                            android:textSize="24sp"
+                            android:text="Produk Terkini"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/brownPrimary"
+                            app:cardCornerRadius="8dp"
+                            android:id="@+id/btn_addProduk"
+                            >
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="5dp">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Tambah Produk"
+                                    android:textSize="16sp"
+                                    android:textColor="@color/white"
+                                    />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginBottom="20dp"-->
+<!--                        android:textSize="14sp"-->
+<!--                        android:id="@+id/errorText"-->
+<!--                        android:text="Produk Terkini"/>-->
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.facebook.shimmer.ShimmerFrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/shimmer_view"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <include layout="@layout/shimmer_catalog_placeholder"/>
+
+                        </com.facebook.shimmer.ShimmerFrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:id="@+id/recylcerView"
+                                android:scrollbars="none"
+                                android:layout_gravity="center_horizontal"
+
+                                />
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

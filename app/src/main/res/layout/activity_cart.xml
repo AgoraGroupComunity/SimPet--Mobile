@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Cart">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="10dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/backbutton"
+                android:layout_gravity="center"
+                android:layout_marginEnd="16dp"
+
+                android:onClick="btn_backFromKeranjang"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:text="Keranjang"
+                android:textColor="@color/brownPrimary"
+                />
+
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintTop_toBottomOf="@+id/topBar"
+        android:id="@+id/errorCart"
+        android:text="error"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone"
+        />
+
+    <!--     Content Scroll View -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/errorCart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavbar">
+
+        <!--         Your existing content goes here -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/shimmer_view"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <include layout="@layout/shimmer_cart_placeholder"/>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recylcerViewCart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:scrollbars="none"
+                />
+
+        </RelativeLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+    <!-- Bottom Navbar -->
+    <LinearLayout
+        android:id="@+id/bottomNavbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingHorizontal="20dp"
+        android:background="@drawable/rounded_slider_up"
+        android:paddingTop="8dp"
+
+        >
+
+        <!-- Your bottom navigation buttons here -->
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="2"
+            >
+
+            <TableRow>
+                <TextView
+                    android:layout_column="1"
+
+                    android:textSize="15sp"
+                    android:text="Sub-Harga"/>
+                <TextView
+                    android:gravity="right"
+                    android:padding="5dip"
+                    android:textSize="13sp"
+                    android:text="- - -"
+
+                    android:id="@+id/subHarga"/>
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_column="1"
+                    android:textSize="15sp"
+                    android:text="Ongkos Kirim"/>
+                <TextView
+                    android:gravity="right"
+                    android:padding="5dip"
+                    android:textSize="13sp"
+                    android:text="- - -"
+                    android:id="@+id/ongkosKirim"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_column="1"
+                    android:textSize="15sp"
+                    android:text="Kode Transaksi"/>
+                <TextView
+                    android:gravity="right"
+                    android:padding="5dip"
+                    android:textSize="13sp"
+                    android:text="- - -"
+                    android:id="@+id/kodeTransaksi"
+                    />
+            </TableRow>
+
+
+
+            <!--            <TextView-->
+            <!--                android:textColor="@color/greyPrimary"-->
+            <!--                android:textSize="30sp"-->
+            <!--                android:text="- - - - - - - - - - - - - - - - - - - - - - -"/>-->
+
+            <ImageView
+                android:layerType="software"
+                android:contentDescription="underline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dash_line" />
+
+            <TableRow>
+                <TextView
+                    android:layout_column="1"
+                    android:textSize="15sp"
+
+                    android:text="Total Harga"/>
+
+                <TextView
+                    android:gravity="right"
+                    android:textSize="13sp"
+                    android:text="- - -"
+                    android:padding="5dip"
+                    android:id="@+id/totalHarga"
+                    />
+            </TableRow>
+
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pesan"
+                android:layout_marginTop="10dp"
+                android:id="@+id/btn_pesan"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/brownPrimary"
+                />
+
+        </TableLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
