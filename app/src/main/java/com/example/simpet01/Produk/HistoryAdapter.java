@@ -8,6 +8,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.simpet01.ApiController.FormattedCurrency;
@@ -50,6 +51,16 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.MyViewHo
         holder.totalOrder.setText(formattedCurrency.formatCurrency(historyModels.get(position).getTotalOrder()));
         holder.dateOrder.setText((historyModels.get(position).getDateOrder()));
 
+        if(historyModels.get(position).getStatus().equals("Diproses")){
+            holder.statusDiproses.setVisibility(View.VISIBLE);
+        }
+        if(historyModels.get(position).getStatus().equals("Selesai")){
+            holder.statusSelesai.setVisibility(View.VISIBLE);
+        }
+        if(historyModels.get(position).getStatus().equals("Dibatalkan")){
+            holder.statusDibatalkan.setVisibility(View.VISIBLE);
+        }
+
 
     }
 
@@ -62,6 +73,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.MyViewHo
 
 
         TextView invoiceOrder,totalOrder,dateOrder;
+        CardView statusSelesai,statusDibatalkan,statusDiproses;
 
 
         public MyViewHolder(@NonNull View itemView) {
@@ -71,7 +83,9 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.MyViewHo
             invoiceOrder = itemView.findViewById(R.id.invoiceOrder);
             totalOrder = itemView.findViewById(R.id.totalOrder);
             dateOrder = itemView.findViewById(R.id.dateOrder);
-
+            statusSelesai = itemView.findViewById(R.id.statusSelesai);
+            statusDibatalkan = itemView.findViewById(R.id.statusDibatalkan);
+            statusDiproses = itemView.findViewById(R.id.statusDiproses);
 
         }
     }

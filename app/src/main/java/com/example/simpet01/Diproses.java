@@ -111,6 +111,7 @@ public class Diproses extends Fragment {
                                         historyModel.setInvoiceOrder(jsonInvoice);
                                         historyModel.setTotalOrder(jsonTotalPrice);
                                         historyModel.setDateOrder(jsonDate);
+                                        historyModel.setStatus("Diproses");
                                         //errorText.setText(jsonInvoice+"->"+jsonTotalPrice+"->"+jsonDate);
 
                                         listHistory.add(historyModel);

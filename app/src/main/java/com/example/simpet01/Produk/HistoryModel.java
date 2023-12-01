@@ -3,6 +3,16 @@ package com.example.simpet01.Produk;
 public class HistoryModel {
     private String dateOrder;
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    private String status;
+
     public String getDateOrder() {
         return dateOrder;
     }

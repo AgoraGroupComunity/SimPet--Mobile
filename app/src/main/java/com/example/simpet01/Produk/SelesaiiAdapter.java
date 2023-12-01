@@ -8,6 +8,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.simpet01.R;
@@ -51,6 +52,7 @@ public class SelesaiiAdapter extends RecyclerView.Adapter<SelesaiiAdapter.MyView
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView dateOrder, invoiceOrder, totalOrder;
+        CardView statusSelesai,statusDibatalkan,statusDiproses;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -58,6 +60,9 @@ public class SelesaiiAdapter extends RecyclerView.Adapter<SelesaiiAdapter.MyView
             dateOrder = itemView.findViewById(R.id.dateOrder);
             invoiceOrder = itemView.findViewById(R.id.invoiceOrder);
             totalOrder = itemView.findViewById(R.id.totalOrder);
+            statusSelesai = itemView.findViewById(R.id.statusSelesai);
+            statusDibatalkan = itemView.findViewById(R.id.statusDibatalkan);
+            statusDiproses = itemView.findViewById(R.id.statusDiproses);
         }
     }
 

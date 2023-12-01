@@ -9,5 +9,9 @@
     <color name="background">#F3F3F3</color>
     <color name="coklat">#8D7B68</color>
     <color name="transparant">#00000000 </color>
+    <color name="yellow">#D19F09</color>
+    <color name="green">#0F8D13</color>
+    <color name="red">#BE261B</color>
+
 
 </resources>

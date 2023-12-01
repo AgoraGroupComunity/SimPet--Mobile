@@ -110,6 +110,7 @@ public class Dibatalkan extends Fragment {
                                         historyModel.setInvoiceOrder(jsonInvoice);
                                         historyModel.setTotalOrder(jsonTotalPrice);
                                         historyModel.setDateOrder(jsonDate);
+                                        historyModel.setStatus("Dibatalkan");
                                         //errorText.setText(jsonInvoice+"->"+jsonTotalPrice+"->"+jsonDate);
 
                                         listHistory.add(historyModel);

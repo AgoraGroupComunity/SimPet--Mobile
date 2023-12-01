@@ -111,6 +111,8 @@ public class Selesaii extends Fragment {
                                         historyModel.setInvoiceOrder(jsonInvoice);
                                         historyModel.setTotalOrder(jsonTotalPrice);
                                         historyModel.setDateOrder(jsonDate);
+                                        historyModel.setStatus("Selesai");
+
                                         //errorText.setText(jsonInvoice+"->"+jsonTotalPrice+"->"+jsonDate);
 
                                         listHistory.add(historyModel);
